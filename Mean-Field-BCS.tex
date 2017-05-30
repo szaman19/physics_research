@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{titling}
+\usepackage{url}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\title{Mean Field Approach to BCS Theory}
+\author{Shehtab Zaman }
+\date{March 2017}
+
+\begin{document}
+\maketitle
+\section{BCS Hamiltonian}
+
+$$ H_I = \frac{-V}{\Omega} \sum_{\vec{k}\vec{p}}
+  c^{\dagger}_{\vec{k}\uparrow}
+    c^{\dagger}_{\vec{-k}\downarrow}
+      c_{\vec{-p}\uparrow}
+        c_{\vec{-p}\downarrow}$$
+$$ H_K = \sum_{\vec{k}\sigma} \xi(\vec{k})
+  c^{\dagger}_{\vec{k}\sigma}
+    c_{\vec{k}\sigma}$$
+% Site Energy:
+$$ \xi(\vec{k}) = \frac{\hbar^2 k^2}{2m} - \mu$$
+
+Order Parameter:
+$$ \Delta = \frac{V}{\Omega}
+  \sum_{\vec{k}}   \langle c^{\dagger}_{\vec{k \uparrow}} c^{\dagger}_{\vec{-k \downarrow}} \rangle $$
+\section{Mean Field Decoupling}
+Mean Field Decouple on dagger and non-dagger terms to get:
+
+$$ c_{\vec{k}\uparrow}^{\dagger}c^{\dagger}_{\vec{-k}\downarrow} =
+    \langle c^{\dagger}_{\vec{k \uparrow}} c^{\dagger}_{\vec{-k \downarrow}} \rangle
+      + \left ( c^{\dagger}_{\vec{k \uparrow}} c^{\dagger}_{\vec{-k \downarrow}}
+        - \langle c^{\dagger}_{\vec{k \uparrow}} c^{\dagger}_{\vec{-k \downarrow}}  \rangle \right)
+$$
+
+$$ c_{\vec{-p}\uparrow} c_{\vec{-p}\downarrow} =
+    \langle c_{\vec{-p}\uparrow}c_{\vec{-p}\downarrow} \rangle
+    + \left ( c_{\vec{-p}\uparrow}c_{\vec{-p}\downarrow}
+    -  \langle c_{\vec{-p}\uparrow}c_{\vec{-p}\downarrow}  \rangle \right)
+$$
+
+Define for simplicity of notation, for $ \vec{k} \neq \vec{p}$:
+ $$ a^{\dagger}_{\vec{k}} = c^{\dagger}_{\vec{k \uparrow}} c^{\dagger}_{\vec{-k \downarrow}}$$
+ $$ a_{\vec{p}} = c_{\vec{-p}\uparrow}c_{\vec{-p}\downarrow}$$
+Rewrite the intercation Hamiltonian as,
+$$H_I = \frac{-V}{\Omega} \sum_{\vec{k}, \vec{p}}
+  \left [ \langle a^{\dagger}_{\vec{k}} \rangle +
+   \left( a^{\dagger}_{\vec{k}} - \langle a^{\dagger}_{\vec{k}} \rangle \right) \right]
+  \left [ \langle a^{}_{\vec{p}} \rangle +
+    \left( a_{\vec{p}} - \langle a_{\vec{p}} \rangle \right) \right ]
+  $$
+Multiplying out and ignoring the double fluctuation term for mean field approximation,
+$$H_I = \frac{-V}{\Omega} \left(
+  \sum_{\vec{k}\vec{p}}
+    \langle a^{\dagger}_{\vec{k}}\rangle \langle a_{\vec{p}} \rangle +
+      \langle   a_{\vec{p}}\rangle a^{\dagger}_{\vec{k}} -
+        \langle  a_{\vec{p}}\rangle \langle a^{\dagger}_{\vec{k}} \rangle +
+          \langle a^{\dagger}_{\vec{k}}\rangle a_{\vec{p}}-
+           \langle a^{\dagger}_{\vec{k}}\rangle a_{\vec{p}}
+\right)
+$$
+Using the order parameter notation, we get,
+$$ H_I = \sum_{k} -\Delta^{\dagger}c_{-\vec{k}\downarrow}c_{\vec{k}\uparrow}
+        -\Delta c^{\dagger}_{\vec{k}\uparrow}c^{\dagger}_{-\vec{k}\uparrow}
+        -\frac{\Omega}{V}\Delta^{\dagger}\Delta
+$$
+Adding the site hopping Hamiltonian,
+$$ H_k = \sum_{k} \xi(\vec{k})c^{\dagger}_{\vec{k}\uparrow}c_{\vec(k)\uparrow} +
+\xi(\vec{k})c^{\dagger}_{\vec{k} \downarrow}c_{\vec{k}\downarrow}$$
+
+Thus for the full Hamiltonian,
+$$ H = H_k + H_I =  \sum_{k} -\Delta^{\dagger}c_{-\vec{k}\downarrow}c_{\vec{k}\uparrow}
+        -\Delta c^{\dagger}_{\vec{k}\uparrow}c^{\dagger}_{-\vec{k}\uparrow}
+        -\frac{\Omega}{V}\Delta^{\dagger}\Delta +
+        \xi(\vec{k})c^{\dagger}_{\vec{k}\uparrow}c_{\vec(k)\uparrow} +
+        \xi(\vec{k})c^{\dagger}_{\vec{k} \downarrow}c_{\vec{k}\downarrow}
+        $$
+  Using the Nambu Spinor defined as,
+  \begin{equation}
+    \begin{split}
+      \Psi &=
+      \begin{bmatrix}
+        c_{\vec{k}\uparrow} \\
+        c^{\dagger}_{-\vec{k} \downarrow}
+      \end{bmatrix}
+    \end{split}
+    \begin{split}
+      \Psi^{\dagger} &=
+      \begin{bmatrix}
+        c^{\dagger}_{\vec{k}\uparrow}  & c_{-\vec{k}\downarrow}
+      \end{bmatrix}
+    \end{split}
+  \end{equation}
+The full Hamiltonian can be written as
+$$
+H + \xi(\vec{k}) = \sum_{\vec{k}} \Psi^{\dagger}_{\vec{k}}
+\begin{bmatrix}
+  \xi(\vec{k}) & -\Delta \\
+  -\Delta^\dagger & -\xi(\vec{k})
+\end{bmatrix}\Psi_{\vec{k}} -\frac{\Omega}{V}\Delta^{\dagger}\Delta
+$$
+\section{Brogoliubuv Transformation}
+
+\section{Diagonalization}
+
+
+
+\end{document}
