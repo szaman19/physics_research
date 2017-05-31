@@ -10,7 +10,8 @@
 \usepackage{url}
 \usepackage{array}
 \usepackage{enumerate}
-\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage{ physics }
+\usepackage[hmargin=3.5cm,vmargin=2.5cm]{geometry}
 \title{Two Body Motion}
 \author{Shehtab Zaman }
 \date{May 2017}
@@ -18,5 +19,55 @@
 \begin{document}
 \maketitle
 \section{Background}
+Mehcanics of two particle that experience a mtual central conservative interaction.
+\section{Lagrangian of Two-Body Problem}
+\begin{equation}
+  \mathcal{L} = \frac{1}{2}m_1 \dot{r_1}^2 + \frac{1}{2}m_2 \dot{r_2}^2
+  -U\left(|\vec{r_1} - \vec{r_2}|\right)
+\end{equation}
+Lagrangian is has translation and rotational  inavirance.
 
+Rotational invariance is due to the potential only haveing magnitude of the
+vectors and not direction.
+
+\section{Solving Lagrangian}
+To decouple the lagrangian and the EL equations, change lagrangian to cener of
+mass and relative mass frame. Translational invariance allows for the
+transformation.
+
+
+For center of Mass, radius $\vec{R}$ and relative mass, radius $ \vec{r}$, we
+have
+
+\begin{align}
+\vec{R} &= \frac{m_1 \vec{r_1 } + m_2 \vec{r_2}}{m_1 + m_2}
+ &
+\vec{r} &= \vec{r_1}-\vec{r_2}
+\end{align}
+
+Using $\mu$ as the effective mass of
+
+\begin{align}
+  \mu &= \frac{m_1m_2}{m_1+ m_2} &
+  M &= m_1 + m_2
+\end{align}
+
+We can decompose the into frames,
+
+\begin{equation}
+\mathcal{L} = \mathcal{L}_{CM} + \mathcal{L}_{Rel}
+\end{equation}
+
+Uing equations 2,3 to rewrite 1 we have
+
+\begin{equation}
+\mathcal{L} = \mathcal{L}_{CM} + \mathcal{L}_{Rel}
+= \frac{1}{2}M\dot{R}^2 + \frac{1}{2}\mu(\dot{r})^2 - U(|\vec{r}|)
+\end{equation}
+
+Where we have,
+
+\begin{align}
+\mathcal{L}_{CM} &= \frac{1}{2}M\dot{R}^2 & \mathcal{L}_{Rel} = \frac{1}{2}\mu\dot{r}^2-U(|\vec{r}|)
+\end{align}
 \end{document}
