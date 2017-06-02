@@ -11,12 +11,48 @@
 \usepackage{array}
 \usepackage{enumerate}
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
-\title{Two-Site Hubbard Model}
+\title{Fermionic Hubbard Model for Two-Site System}
 \author{Shehtab Zaman }
 \date{May 2017}
 
 \begin{document}
 \maketitle
-\section{Hubbard Model Hamiltonian}
+\section{Hubbard Model Hamiltonian for Fermion}
+
+\begin{equation}
+\mathcal{H} = -t\sum_{\sigma} \left(f_{1 \sigma} ^{\dagger}f_{2 \sigma}+f_{2 \sigma} ^{\dagger}f_{1 \sigma} \right)
++ U\left(\hat{n}_{1\uparrow} \hat{n}_{1\downarrow} + \hat{n}_{2\uparrow} \hat{n}_{2\downarrow} \right)
+\end{equation}
+
+Where for site $ i$ and spin $ \sigma$, the creation, annihalation and number
+operators are $f_{i \sigma} ^{\dagger}$,$f_{i \sigma} $,
+$ \hat{n}_{i\sigma}$  respectively.
+
+The number operator is defined as
+
+$$ \hat{n}_{i\sigma} = f_{i \sigma} ^{\dagger}f_{i \sigma}$$
+\section{Fock Space}
+\subsection{Notes on Fock Space}
+
+\subsection{Fock Space Basis}
+The Hubbard model does not change the total number of electron in the system. Thus we can consider
+a half-filled $(N = 2)$ two site system. According to the Pauli Exclusion Principle, for a half-filled two-site system we
+have 6 basis states.
+\begin{center}
+
+\end{center}
+\section{Two-Site Hubbard Model Matrix}
+\begin{equation}
+  \mathcal{H} =
+  \begin{bmatrix}
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & U & -t & -t & 0 & 0 \\
+    0 & -t & 0 & 0 & -t & 0 \\
+    0 & -t & 0 & 0 & -t & 0 \\
+    0 & 0 & -t & -t & U & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0
+  \end{bmatrix}
+\end{equation}
+\section{Exact Solution}
 
 \end{document}
