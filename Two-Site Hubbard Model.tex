@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{braket}
 \usepackage{amsthm}
 \usepackage{epsfig}
 \usepackage{epstopdf}
@@ -10,6 +11,7 @@
 \usepackage{url}
 \usepackage{array}
 \usepackage{enumerate}
+\usepackage{booktabs}
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
 \title{Fermionic Hubbard Model for Two-Site System}
 \author{Shehtab Zaman }
@@ -33,13 +35,43 @@ The number operator is defined as
 $$ \hat{n}_{i\sigma} = f_{i \sigma} ^{\dagger}f_{i \sigma}$$
 \section{Fock Space}
 \subsection{Notes on Fock Space}
-
+\subsubsection{Second Quantizaion}
+The many body wavefunctions for bosons and fermions are difficult to work
+with. So we use the occupation-number representation of "second quantizatin: formalism".
+Essentially for fermions we consider the occupation number for each state. In
+this example a half-filled two site system is considered and so each state
+can either be 0 or 1, or each site can only one fermion with the same state and spin.
+\subsubsection{Creation and Annihilation operators}
+\subsubsection{Anti-Commutation Relations}
+Unlike bosons, fermions obey the anti-commutation relations. The \textbf{anti-commutator}
+$\{A,B\} $ between two operators $ A$ and $ B$ are defined as
+\begin{equation}
+  \{A,B\}\equiv AB + BA
+\end{equation}
+The fermion creation and annhilation operators satisfies the relations
+\begin{align}
+  \{c_{k},c_{k\prime}\} &= 0 \\
+  \{c^{\dagger}_{k},c^{\dagger}_{k\prime}\} &= 0 \\
+  \{c^{\dagger}_{k},c_{k\prime}\} &= \delta_{k,k\prime}
+\end{align}
 \subsection{Fock Space Basis}
 The Hubbard model does not change the total number of electron in the system. Thus we can consider
 a half-filled $(N = 2)$ two site system. According to the Pauli Exclusion Principle, for a half-filled two-site system we
 have 6 basis states.
 \begin{center}
-
+\begin{tabular} {lcc}
+    \toprule
+    \multicolumn{3}{c}{Fock States} \\
+    \midrule
+    $ \ket{\phi_{i}}$ & State & Spin Diagram \\\midrule
+    $ \ket{\phi_{1}}$ & $c^{\dagger}_{2\uparrow}c^{\dagger}_{1\uparrow}\ket{} $   &   $ \uparrow ,\uparrow\text{\ } $\\ \midrule
+    $ \ket{\phi_{2}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $  \uparrow\downarrow,\bigcirc $\\ \midrule
+    $ \ket{\phi_{3}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \downarrow ,\uparrow \text{\ }$\\ \midrule
+    $ \ket{\phi_{4}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $ \uparrow ,\downarrow \text{\ }$\\ \midrule
+    $ \ket{\phi_{5}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \bigcirc,\uparrow\downarrow $\\ \midrule
+    $ \ket{\phi_{6}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\downarrow}\ket{} $ & $ \downarrow,\downarrow\text{\ } $\\ \midrule
+    \bottomrule
+\end{tabular}
 \end{center}
 \section{Two-Site Hubbard Model Matrix}
 \begin{equation}
@@ -54,5 +86,6 @@ have 6 basis states.
   \end{bmatrix}
 \end{equation}
 \section{Exact Solution}
+
 
 \end{document}
