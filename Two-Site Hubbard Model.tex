@@ -12,7 +12,7 @@
 \usepackage{array}
 \usepackage{enumerate}
 \usepackage{booktabs}
-\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage[hmargin=3cm,vmargin=2.5cm]{geometry}
 \title{Fermionic Hubbard Model for Two-Site System}
 \author{Shehtab Zaman }
 \date{May 2017}
@@ -41,7 +41,7 @@ with. So we use the occupation-number representation of "second quantizatin: for
 Essentially for fermions we consider the occupation number for each state. In
 this example a half-filled two site system is considered and so each state
 can either be 0 or 1, or each site can only one fermion with the same state and spin.
-\subsubsection{Creation and Annihilation operators}
+% \subsubsection{Creation and Annihilation operators}
 \subsubsection{Anti-Commutation Relations}
 Unlike bosons, fermions obey the anti-commutation relations. The \textbf{anti-commutator}
 $\{A,B\} $ between two operators $ A$ and $ B$ are defined as
@@ -74,6 +74,82 @@ have 6 basis states.
 \end{tabular}
 \end{center}
 \section{Two-Site Hubbard Model Matrix}
+The Hubbard Hamiltoninan can be decomposed into the two decoupled Potential and Hopping Hamiltoninans.
+Equation (1) can be written as,
+\begin{equation}
+\mathcal{H} = \mathcal{H}_t + \mathcal{H}_U
+\end{equation}
+Where, the Hopping Hamiltonian can be written as,
+\begin{equation}
+  \mathcal{H}_t = -t\sum_{\sigma} \left(f_{1 \sigma} ^{\dagger}f_{2 \sigma}+f_{2 \sigma} ^{\dagger}f_{1 \sigma} \right)
+\end{equation}
+and the Potential Hamiltonian can be written as,
+\begin{equation}
+  \mathcal{H}_U = U\left(\hat{n}_{1\uparrow} \hat{n}_{1\downarrow} + \hat{n}_{2\uparrow} \hat{n}_{2\downarrow} \right)
+\end{equation}
+\subsection{Hopping Hamiltonian in Occupation Number Basis}
+  The hopping terms in the terms lie on the off diagonal terms of the matrix since the electrons must hop from one site to
+  another.
+
+  The Hamiltonian acting on a particular basis, will produce a superposition of occupation basis.
+  \subsubsection{Basis Calculation}
+  We need not consider \( \phi_1 \) and 9\( \phi_6\)since the both sites have electrons with the same spin, and
+  thus all 4 terms of the hopping terms have zero contribution.
+
+  Let us consider the action of \( \mathcal{H}_t\) on \(\phi_2\).
+  \begin{align}
+    \mathcal{H}_t \ket{\phi_2} &=
+    -t\sum_{\sigma} \left(
+      f_{1 \sigma} ^{\dagger}f_{2 \sigma}+
+        f_{2 \sigma} ^{\dagger}f_{1 \sigma} \right)
+          (f^\dagger_{1\downarrow}f^\dagger_{1\uparrow}) \ket{}\\
+          &= -t\left(
+            f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}+
+              f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} +
+                f_{1 \downarrow} ^{\dagger}f_{2 \downarrow}+
+                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{} \\
+          &= -t\left(
+          f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+            f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+              f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{} \\
+          &= -t\left(
+            % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+              f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)\right) \ket{} \\
+          &= -t\left(
+            % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+              -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}f_{1 \uparrow}f^\dagger_{1\uparrow}+
+                % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}f_{1 \downarrow}  f^\dagger_{1\downarrow} \right)\ket{} \\
+          &=-t\left(
+            % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+              -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}\left(1 - \hat{n}_{1\uparrow}\right)+
+                % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}\left(1 - \hat{n}_{1\downarrow}\right) \right)\ket{} \\
+          &=-t\left(
+            % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+              -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}+
+                % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
+                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow} \right)\ket{} \\
+          &= -t \ket{\phi_3} + -t\ket{\phi_4}
+  \end{align}
+  On equation (10) we have only have two terms that have non-zero contributions since the other two does not allow
+  hopping from site 1 to 2 and we have a simplified hamiltonian action in equation (11).
+
+  Using the relation
+  \( f_{2 \uparrow} ^{\dagger}f_{1 \uparrow}f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} = -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}f_{1 \uparrow}f^\dagger_{1\uparrow}\)
+  (-1 since odd number of indices were switched) and
+  \(f_{2 \downarrow} ^{\dagger}f_{1 \downarrow}f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} = f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}f_{1 \downarrow}  f^\dagger_{1\downarrow}\)
+  we obtain equation (13).
+
+  Also using the relation \(c_{1\sigma}c_{1\sigma}^\dagger = 1 - c_{1\sigma}^\dagger c_{1\sigma} = 1 - \hat{n}_{1 \dagger} \),
+  we obtain equation (14)
+
+  Finaly since the number operator , \( \hat{n}_{1 \sigma}\), acting on the vacuum state, \( \ket{0}\), is zero, we can get
+  equation (15) and switching indices again to conform to the fock basis convention listed above, we get equation(16). 
+
 \begin{equation}
   \mathcal{H} =
   \begin{bmatrix}
