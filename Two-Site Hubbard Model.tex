@@ -58,21 +58,24 @@ The fermion creation and annhilation operators satisfies the relations
 The Hubbard model does not change the total number of electron in the system. Thus we can consider
 a half-filled $(N = 2)$ two site system. According to the Pauli Exclusion Principle, for a half-filled two-site system we
 have 6 basis states.
+\begin{table}[h]
 \begin{center}
-\begin{tabular} {lcc}
-    \toprule
-    \multicolumn{3}{c}{Fock States} \\
-    \midrule
-    $ \ket{\phi_{i}}$ & State & Spin Diagram \\\midrule
-    $ \ket{\phi_{1}}$ & $c^{\dagger}_{2\uparrow}c^{\dagger}_{1\uparrow}\ket{} $   &   $ \uparrow ,\uparrow\text{\ } $\\ \midrule
-    $ \ket{\phi_{2}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $  \uparrow\downarrow,\bigcirc $\\ \midrule
-    $ \ket{\phi_{3}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \downarrow ,\uparrow \text{\ }$\\ \midrule
-    $ \ket{\phi_{4}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $ \uparrow ,\downarrow \text{\ }$\\ \midrule
-    $ \ket{\phi_{5}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \bigcirc,\uparrow\downarrow $\\ \midrule
-    $ \ket{\phi_{6}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\downarrow}\ket{} $ & $ \downarrow,\downarrow\text{\ } $\\ \midrule
-    \bottomrule
-\end{tabular}
+  \caption{Fock States}
+  \label{tab: Title}
+  \begin{tabular} {| lcc |}
+      \hline
+      $ \ket{\phi_{i}}$ & State & Spin Diagram \\ \hline
+      $ \ket{\phi_{1}}$ & $c^{\dagger}_{2\uparrow}c^{\dagger}_{1\uparrow}\ket{} $   &   $ \uparrow ,\uparrow\text{\ } $\\    \hline
+      $ \ket{\phi_{2}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $  \uparrow\downarrow,\bigcirc $\\   \hline
+      $ \ket{\phi_{3}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \downarrow ,\uparrow \text{\ }$\\  \hline
+      $ \ket{\phi_{4}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{1\uparrow}\ket{} $ &   $ \uparrow ,\downarrow \text{\ }$\\  \hline
+      $ \ket{\phi_{5}}$ & $c^{\dagger}_{2\downarrow}c^{\dagger}_{2\uparrow}\ket{} $ &   $ \bigcirc,\uparrow\downarrow $\\    \hline
+      $ \ket{\phi_{6}}$ & $c^{\dagger}_{1\downarrow}c^{\dagger}_{2\downarrow}\ket{} $ & $ \downarrow,\downarrow\text{\ } $\\ \hline
+      \bottomrule
+  \end{tabular}
+
 \end{center}
+\end{table}
 \section{Two-Site Hubbard Model Matrix}
 The Hubbard Hamiltoninan can be decomposed into the two decoupled Potential and Hopping Hamiltoninans.
 Equation (1) can be written as,
@@ -102,32 +105,32 @@ and the Potential Hamiltonian can be written as,
     -t\sum_{\sigma} \left(
       f_{1 \sigma} ^{\dagger}f_{2 \sigma}+
         f_{2 \sigma} ^{\dagger}f_{1 \sigma} \right)
-          (f^\dagger_{1\downarrow}f^\dagger_{1\uparrow}) \ket{}\\
+          (f^\dagger_{1\downarrow}f^\dagger_{1\uparrow}) \ket{0}\\
           &= -t\left(
             f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}+
               f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} +
                 f_{1 \downarrow} ^{\dagger}f_{2 \downarrow}+
-                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{} \\
+                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{0} \\
           &= -t\left(
           f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
             f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
               f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
-                f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{} \\
+                f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \right) \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right) \ket{0} \\
           &= -t\left(
             % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
               f_{2 \uparrow} ^{\dagger}f_{1 \uparrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
                 % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
-                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)\right) \ket{} \\
+                  f_{2 \downarrow} ^{\dagger}f_{1 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)\right) \ket{0} \\
           &= -t\left(
             % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
               -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}f_{1 \uparrow}f^\dagger_{1\uparrow}+
                 % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
-                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}f_{1 \downarrow}  f^\dagger_{1\downarrow} \right)\ket{} \\
+                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}f_{1 \downarrow}  f^\dagger_{1\downarrow} \right)\ket{0} \\
           &=-t\left(
             % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
               -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}\left(1 - \hat{n}_{1\uparrow}\right)+
                 % f_{1 \downarrow} ^{\dagger}f_{2 \downarrow} \left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
-                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}\left(1 - \hat{n}_{1\downarrow}\right) \right)\ket{} \\
+                  f_{2 \downarrow} ^{\dagger}f^\dagger_{1\uparrow}\left(1 - \hat{n}_{1\downarrow}\right) \right)\ket{0} \\
           &=-t\left(
             % f_{1 \uparrow} ^{\dagger}f_{2 \uparrow}\left(f^\dagger_{1\downarrow}f^\dagger_{1\uparrow} \right)+
               -f_{2 \uparrow} ^{\dagger}f^\dagger_{1\downarrow}+
@@ -150,10 +153,41 @@ and the Potential Hamiltonian can be written as,
   Finaly since the number operator , \( \hat{n}_{1 \sigma}\), acting on the vacuum state, \( \ket{0}\), is zero, we can get
   equation (15) and switching indices again to conform to the fock basis convention listed above, we get equation(16).
 
+  Similar calculations can be down with the other basis get the Hopping Hamiltonian written as,
+  \begin{equation}
+    \mathcal{H}_t =
+    \begin{bmatrix}
+      0 & 0 & 0 & 0 & 0 & 0   \\
+      0 & 0 & -t & -t & 0 & 0 \\
+      0 & -t & 0 & 0 & -t & 0 \\
+      0 & -t & 0 & 0 & -t & 0 \\
+      0 & 0 & -t & -t & 0 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+  \end{equation}
+\subsection{Potential Hamiltonian in Occupation Number Basis}
+The Potential terms occupy the diagonal of the occupation number matrix. In the basis defined above we can see that
+only \(\ket{\phi_2} \) and \(\ket{\phi_5}\) have non-zero contributions.
+
+So the Potential Hamiltonian can be written as,
+
+\begin{equation}
+  \mathcal{H}_U =
+  \begin{bmatrix}
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & U & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & U & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0
+  \end{bmatrix}
+\end{equation}
+
+From equation(6) we can write the complete Hamiltonian as,
 \begin{equation}
   \mathcal{H} =
   \begin{bmatrix}
-    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0   \\
     0 & U & -t & -t & 0 & 0 \\
     0 & -t & 0 & 0 & -t & 0 \\
     0 & -t & 0 & 0 & -t & 0 \\
