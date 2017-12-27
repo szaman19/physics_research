@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{titling}
+\usepackage{url}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{ physics }
+\usepackage[hmargin=3.5cm,vmargin=2.5cm]{geometry}
+\title{Bose-Einstein and Fermi-Dirac Distributions}
+\author{Shehtab Zaman }
+\date{October 2017}
+
+\begin{document}
+$$ Z_G^{(F-D)} = \prod_{i} \left[{1+e^{\beta(\mu - \epsilon_i)}}\right]$$
+
+$$ Z_G^{(B-E)} = \prod_{i} \left[{1+e^{\beta(\mu + \epsilon_i)}} \right]$$
+
+\section{Relation between the rand Canonical ensemble and canonical ensemble}
+
+$$ Z_g = \sum_{N} \sum_{i} z^N e^{\beta E_i (n)}$$
+
+$$ \langle N \rangle = \frac{z}{Z_G} \frac{\partial Z_G}{\partial z}$$
+$$ \langle N \rangle = \frac{z}{Z_G} \frac{\partial Z_G}{\partial z} = z \frac{\partial ln(Z_G)}{\partial z}$$
+
+
+$$ \langle N \rangle = \sum_{i} \frac{e^\beta\mu e^{-\beta E_i}}{1 + e^{\beta\mu}e^{-\beta E_i}}$$
+\end{document}
