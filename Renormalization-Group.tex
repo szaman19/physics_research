@@ -27,6 +27,75 @@ In quantum electrodynamics, when computing physical quantity such
 as scattering rate between eletrons, a power series in the coupling constant $\alpha $
 are given by integrals over all possible momenta $ k$, which diverge.
 
-\section{References}
+We wish to consider the application of Renormalization Group methods to interacting
+non-relativistic fermions especially weyl fermions.
 
+In condensed matter physics, it is still possible to use RG a even with given
+natural cutoffs (such as the inverse lattice spacing) and absense of ultraviolet infinities.
+
+\section{Use Cases}
+
+\subsection{Cubic Lattice(Shankar)}
+
+Considering a d dimensional cubic lattice, with a real scalar field $ \phi(\hat{n})$ at
+each site. The partition function is given by,
+
+\begin{equation}
+  \mathbf{Z} = \int \prod_{\hat{n}} d\phi(\hat{n}) e^{S(\phi{\hat{n}})}
+\end{equation}
+
+where $ S$ is the action.
+
+The two-point function, the average of the correlation between the variables at two sites, is
+given by
+
+\begin{align}
+  G(\hat{n_1},\hat{n_2}) &= G(\hat{n_1} - \hat{n_2}) \\
+                        &= \langle \phi(\hat{n_1})\phi(\hat{n_2}) \rangle \\
+                        &= \frac{1}{\mathbf{Z}} \int \prod_{\hat{n}} d\phi(\hat{n}) \phi(\hat{n_1})\phi(\hat{n_2}) e^{S(\phi{\hat{n}})}
+\end{align}
+
+The Fourier transform of the lattice vector field is given by,
+
+\begin{equation}
+  \phi(\hat{k}) = \frac{1}{V} \sum_{\hat{n}}e^{i\hat{k} - \hat{n}} \phi{\hat{n}}
+\end{equation}
+
+So we can write the partition function from eq.1 as,
+
+\begin{equation}
+  \mathbf{Z} = \int \prod_{|\hat {k}| \leq \frac{\pi}{a}} d\phi(\hat{k})e^{S(\phi(\hat{k}))}
+\end{equation}
+When considering problems of large seperations where $ \hat{n}_1 - \hat{n}_2$ is large,
+in momentum space with small $\hat{k}$
+
+So by using a cutoff momentum $ \frac{\Lambda}{s}$, we can have
+
+\begin{equation}
+  \phi_{<} =  \phi(k) \text{(slow modes)}
+\end{equation}
+
+\begin{equation}
+  \phi_{>} =  \phi(k) \text{(fast modes)}
+\end{equation}
+
+In order to perform the Renormalization Group technique, we must perform the integral
+over the $\phi_{<} $ fields only. So the first step for RG is to obtain an effective action
+,$S^{'}(\phi _{<}) $, such that $e^{S^{'}(\phi _{<}) } $ produces all the slow momentum
+correlation function when integrated over the slow modes.
+
+\section{Critical Phenomenon}
+Macroscopic variables like specific heat, magnetic
+susceptibility or correlation length either diverge or
+approachzero as $T \rightarrow T_c $
+\section{Definitions}
+
+\textbf{Scalar Field:} $(\phi(\hat{n}))$ A mathematical function that assigns
+a value to each point/site labeled by vector $\hat{n} $. \newline
+\textbf{Reciprocal Space:} $kx = 2\pi $ \newline
+\textbf{Weyl Fermion:} Masslesss spin half quasi-particle with definite chirality. \newline
+\textbf{Majorana Fermion:} Neutral spin half quasi-particle which is it's own anti-particle. \newline
+\textbf{Response Function:} The\newline
+\section{References}
+Majorana, E., 1937, Il Nuovo Cimento (1924-1942) 14(4), 171.
 \end{document}
